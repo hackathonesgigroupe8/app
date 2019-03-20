@@ -1,62 +1,42 @@
 <template>
     <div>
-        <nav>
-            <img src="./assets/logo.svg" alt="logo">
-            <select>
-                <option value="en">EN</option>
-                <option value="fr">FR</option>
-            </select>
-            <a href="#">Sources</a>
-            <a href="#">About</a>
-        </nav>
-        <div id="mySidenav" class="sidenav">
-            <DetailCountry v-if="detail" />
-            <ListArticleCountry  v-if="list" />
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
+        <h1 style="margin-bottom: 32px;">All articles for France </h1>
+
+
+        <div style="margin-bottom: 10px;">
+            <a href="#" class="hover">Biodiversity</a>
+            <a href="#" class="hover">Biodiversity</a>
+            <a href="#" class="hover">Biodiversity</a>
+            <a href="#" class="hover">Biodiversity</a>
         </div>
 
-        <span style="font-size:30px;cursor:pointer;margin:7px;" id="openNav">&#9776;</span>
+
+        <div>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018rsity</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018rsity</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018rsity</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018rsity</a>
+            <a href="#" class="hover2">The biodiverity in Paris since 2018</a>
+        </div>
+
+        <button class="share">Share result</button>
 
     </div>
+    
 </template>
 
+
 <script>
-    import DetailCountry from './components/DetailCountry.vue'
-    import ListArticleCountry from "./components/ListArticleCountry.vue";
-
     export default {
-        name: 'app',
-        components: {
-            ListArticleCountry,
-            DetailCountry
-        },
-        data () {
-            return {
-                message:  "test",
-                detail : true,
-                list: false
-
-
-            }
-        },
-
-        mounted()
-        {
-            document.getElementById("openNav").addEventListener('click',() =>
-            {
-                document.getElementById("mySidenav").classList.add('hideSidebar');
-            })
-            document.getElementById("closeNav").addEventListener('click',() =>
-            {
-                document.getElementById("mySidenav").classList.remove('hideSidebar');
-            })
-
-        }
+        name: 'ListArticleCountry',
     }
-
-
-
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
     @font-face {
         font-family: "Avenir Next";
@@ -250,6 +230,26 @@
         padding: 0 12px;
         float: right;
         margin-top: 30px;
+    }
+    .hover{
+        padding: 5px 14px 14px 0px!important;
+        text-decoration: none !important;
+        font-size: 18px !important;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        display: inline-block !important;
+        color: #9ba0a5 !important;
+        margin-right: 20px;
+    }
+    .hover2{
+        padding: 5px 14px 14px 0px!important;
+        text-decoration: underline !important;
+        font-size: 14px !important;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        color: #4a5056 !important;
     }
 
 
