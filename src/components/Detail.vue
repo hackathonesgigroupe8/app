@@ -11,8 +11,8 @@
 </template>
 
 <script>
-    import DetailCountry from '../components/DetailCountry.vue'
-    import ListArticleCountry from "../components/ListArticleCountry.vue";
+    import DetailCountry from '../components/details/DetailCountry.vue'
+    import ListArticleCountry from "../components/details/ListArticleCountry.vue";
 
     export default {
         name: 'app',
