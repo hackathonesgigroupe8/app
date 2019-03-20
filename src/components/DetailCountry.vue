@@ -60,9 +60,9 @@
 
 
 <script>
-    export default {
-        name: 'DetailCountry',
-    }
+export default {
+name: 'DetailCountry',
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
