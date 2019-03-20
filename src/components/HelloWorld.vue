@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ info }}</h1>
     <p>
 
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
@@ -30,10 +30,22 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .post('http://localhost:8060/articles')
+      .then(response => (this.info = response))
   }
 }
 </script>

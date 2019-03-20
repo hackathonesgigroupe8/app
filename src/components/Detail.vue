@@ -4,9 +4,7 @@
             <DetailCountry v-if="detail" />
             <ListArticleCountry v-if="list" />
         </div>
-
         <span style="font-size:30px;cursor:pointer;margin:7px;" id="openNav">&#9776;</span>
-
     </div>
 </template>
 
@@ -15,7 +13,7 @@
     import ListArticleCountry from "../components/details/ListArticleCountry.vue";
 
     export default {
-        name: 'app',
+        name: 'detail',
         components: {
             ListArticleCountry,
             DetailCountry,
@@ -25,8 +23,6 @@
                 message:  "test",
                 detail : true,
                 list: false
-
-
             }
         },
 
@@ -40,7 +36,6 @@
             {
                 document.getElementById("mySidenav").classList.remove('hideSidebar');
             })
-
         }
     }
 </script>
