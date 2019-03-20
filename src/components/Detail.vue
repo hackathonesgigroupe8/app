@@ -4,7 +4,7 @@
             <DetailCountry v-if="detail" />
             <ListArticleCountry v-if="list" />
         </div>
-        <span style="font-size:30px;cursor:pointer;margin:7px;" id="openNav" >&#9776;</span>
+        <span style="font-size:30px;cursor:pointer;margin:7px;" id="openNav">&#9776;</span>
     </div>
 </template>
 
