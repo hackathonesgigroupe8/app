@@ -28,9 +28,8 @@ export default {
 
 <style scoped>
   #description{
-    height: 100%;
-    position: absolute;
-    top:33%;
+    margin-top: 14vw;
+    margin-left:64px;
   }
 
   #instruction{
