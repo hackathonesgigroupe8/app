@@ -60,7 +60,7 @@
             <div>
                 <label class="small" style="margin-bottom: 12px;">Trends topics in media</label>
 
-                <p v-for="topic in topicMedia.slice(0, 50)" :key="topic.id" class="button">
+                <p v-for="topic in topicMedia.slice(0, 10)" :key="topic.id" class="button">
                     {{ topic[0] }}
                 </p>
             </div>
@@ -69,7 +69,9 @@
         <div class="row">
             <div>
                 <label class="small" style="margin-bottom: 12px;">Trends negatives topics</label>
-                <p class="button"></p>
+                <p v-for="top in negativeTop.slice(0, 10)" :key="top.id" class="button">
+                    {{ top[1] }}
+                </p>
             </div>
         </div>
 
@@ -115,6 +117,7 @@
                 specilizedMedia: "",
                 generalistMedia: "",
                 topicMedia: [],
+                negativeTop: [],
 
             }
         },
@@ -139,6 +142,7 @@
                         vm.specilizedMedia = res.data.specializedRepresentation.toFixed(2);
                         vm.generalistMedia = res.data.generalistRepresentation.toFixed(2);
                         vm.topicMedia = res.data.topicsInMedia;
+                        vm.negativeTop = res.data.negTopics
                     })
                     .catch((err) => {
                         return err;
