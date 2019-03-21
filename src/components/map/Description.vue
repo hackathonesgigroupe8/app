@@ -1,8 +1,7 @@
 <template>
     <div id="description">
       <h1>Be aware on ecology opinion trends </h1>
-      <p class="hero">EAR is a platform for comparing scientific data and how it is represented in the media.
-      The aim is to provide a tool that gives an overview, on a specific set of data the current state of the awareness in public opinion and in the media</p>
+      <p class="hero">Ecoaware trends gives an overview, on a specific set of data, of the current state of the awareness in public opinion and in the media.</p>
     <DataSetSelector/>
         <p class="light">Source</p>
         <img class="logos" src="logos.jpg">

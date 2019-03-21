@@ -31,6 +31,11 @@
             country: Object,
             showDetails: Function,
         },
+         watch: {
+            country: function () {
+            this.getData(this.country.code, 'eea_ip_2018')
+            }
+        },
         data() {
             return ({
                 nbArticles: [],
@@ -52,7 +57,6 @@
                 };
                 axios.post('http://localhost:8060/stats', requestBody, config)
                     .then((res) => {
-                        console.log(res);
                         vm.nbArticles = res.data.articles;
 
                     })
@@ -69,7 +73,7 @@
             }
         },
         mounted() {
-            this.getData('FR', 'eea_ip_2018');
+            this.getData(this.country.code, 'eea_ip_2018');
         }
     }
 

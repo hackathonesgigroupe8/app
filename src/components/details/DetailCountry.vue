@@ -102,6 +102,11 @@
             country: Object,
             showArticles: Function
         },
+        watch: {
+            country: function () {
+            this.getData(this.country.code, 'eea_ip_2018')
+            }
+        },
         data() {
             return {
                 countryName: "",
@@ -129,23 +134,22 @@
 
                 axios.post('http://localhost:8060/stats', requestBody, config)
                     .then((res) => {
-                        console.log(res);
                         vm.nbOfArticles = res.data.nbArticles;
                         vm.scaleIndex = res.data.notation.toFixed(2);
                         vm.specilizedMedia = res.data.specializedRepresentation.toFixed(2);
                         vm.generalistMedia = res.data.generalistRepresentation.toFixed(2);
                         vm.topicMedia = res.data.topicsInMedia;
-
-
                     })
                     .catch((err) => {
                         return err;
                     })
             }
         },
-        mounted() {
-            this.getData('FR', 'eea_ip_2018');
-        }
+        created() {
+    
+            this.getData(this.country.code, 'eea_ip_2018');
+        },
+       
     }
 
 </script>
