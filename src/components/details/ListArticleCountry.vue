@@ -1,19 +1,22 @@
 <template>
     <div>
-        <a href="#" v-on:click="showDetails" class="closebtn" id="closeNavbar"><</a>
-        <h1 style="margin-bottom: 32px;">All articles for {{ country.name }} </h1>
-
+        <a href="#" v-on:click="showDetails" class="closebtn" id="closeNavbar"> 
+            <img src="../../../public/back.svg" alt="Close map" class="backIcon">    
+        </a>
+        <h1 style="margin-bottom: 32px;margin-top: 56px;">All articles for {{ country.name }} </h1>
 
         <div style="margin-bottom: 10px;">
-            <div class="hover" v-for="(article,index) in nbArticles" :key="article.id">
-                <a href="#" v-on:click="showCategory(index)" >
-                    {{ article['categ'].charAt(0).toUpperCase() + article['categ'].slice(1) }}
-                </a>
-                <div class="hover2 display" v-for="article in article.list.slice(0, 1)" :key="article.id" :id='index'>
-                    <a target="_blank" :href="article.url">{{ article.name }}</a>
-                </div>
-            </div>
+            <a href="#" class="titleSection" v-on:click="showCategory(index)" v-for="(article,index) in nbArticles" :key="article.id">
+                   {{ article['categ'].charAt(0).toUpperCase() + article['categ'].slice(1) }} 
+                   
+            </a>
+            <div v-for="(article,index) in nbArticles" :key="article.id" :id='index' class="display">
+                        <a class="hover2" v-for="article in article.list.slice(0, 50)" :key="article.id" target="_blank" :href="article.url">
+                            {{ article.name }}
+                        </a>
+                   </div>
         </div>
+        
     </div>
 
 </template>
@@ -27,6 +30,11 @@
         props: {
             country: Object,
             showDetails: Function,
+        },
+         watch: {
+            country: function () {
+            this.getData(this.country.code, 'eea_ip_2018')
+            }
         },
         data() {
             return ({
@@ -49,7 +57,6 @@
                 };
                 axios.post('http://localhost:8060/stats', requestBody, config)
                     .then((res) => {
-                        console.log(res);
                         vm.nbArticles = res.data.articles;
 
                     })
@@ -66,7 +73,7 @@
             }
         },
         mounted() {
-            this.getData('FR', 'eea_ip_2018');
+            this.getData(this.country.code, 'eea_ip_2018');
         }
     }
 
@@ -77,6 +84,12 @@
 <style>
     .display{
         display: none;
+        clear: both;
+        margin-top: 26px
+    }
+    .closebtn{
+        float: left;
+            margin-top: -10px!important;
     }
     .hover {
         padding: 5px 14px 14px 0px !important;
@@ -89,7 +102,13 @@
         color: #9ba0a5 !important;
 
     }
-
+    .titleSection{
+        font-size: 16px!important;
+        padding-left: 0!important;
+        float: left;
+        margin-right: 24px;
+        margin-bottom: 24px;
+    }
     .hover2 a {
         padding: 5px 14px 14px 0px !important;
         text-decoration: underline !important;

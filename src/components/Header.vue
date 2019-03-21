@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav>
-            <img src="../assets/logo.svg" alt="logo">
+            <img src="../assets/logo.png" alt="logo">
             <div>
                 <router-link to="/map">Map</router-link>
                 <router-link to="/services">Services</router-link>
@@ -45,7 +45,7 @@
     nav > img {
 
         display: inline-block;
-        height: 24px;
+        height: 16px;
         margin-top: 28px;
     }
 

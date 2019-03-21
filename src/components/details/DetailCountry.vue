@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 style="margin-bottom: 32px;margin-top: 40px;">{{ country.name }}</h1>
+        <h1 style="margin-bottom: 32px;margin-top: 56px;">{{ country.name }}</h1>
         <p v-if="specilizedMedia > 0">
             Regarding global pollution in 2016 and according to data collected in the media, the public opinion is aware
             of the problem.
@@ -104,6 +104,11 @@
             country: Object,
             showArticles: Function
         },
+        watch: {
+            country: function () {
+            this.getData(this.country.code, 'eea_ip_2018')
+            }
+        },
         data() {
             return {
                 countryName: "",
@@ -132,24 +137,23 @@
 
                 axios.post('http://localhost:8060/stats', requestBody, config)
                     .then((res) => {
-                        console.log(res);
                         vm.nbOfArticles = res.data.nbArticles;
                         vm.scaleIndex = res.data.notation.toFixed(2);
                         vm.specilizedMedia = res.data.specializedRepresentation.toFixed(2);
                         vm.generalistMedia = res.data.generalistRepresentation.toFixed(2);
                         vm.topicMedia = res.data.topicsInMedia;
                         vm.negativeTop = res.data.negTopics
-
-
                     })
                     .catch((err) => {
                         return err;
                     })
             }
         },
-        mounted() {
-            this.getData('FR', 'eea_ip_2018');
-        }
+        created() {
+    
+            this.getData(this.country.code, 'eea_ip_2018');
+        },
+       
     }
 
 </script>
