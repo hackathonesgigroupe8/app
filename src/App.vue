@@ -226,7 +226,7 @@
         border: solid 1px #c8cccf;
         background-color: #ffffff;
         margin-left: 7px;
-        padding: 0 30px;
+        padding: 0 16px;
         color: #4a5056;
         font-size: 14px;
         font-weight: 500;

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 style="margin-bottom: 32px;margin-top: 40px;">{{ country.name }}</h1>
+        <h1 style="margin-bottom: 32px;margin-top: 56px;">{{ country.name }}</h1>
         <p v-if="specilizedMedia > 0">
             Regarding global pollution in 2016 and according to data collected in the media, the public opinion is aware
             of the problem.
