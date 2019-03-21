@@ -124,16 +124,7 @@
         font-stretch: normal;
         color: #aa8f72;
     }
-    .share{
-        height: 36px;
-        border-radius: 3px;
-        border: solid 1px #d7dade;
-        background-color: #ffffff;
-        line-height: 36px;
-        padding: 0 12px;
-        float: right;
-        margin-top: 30px;
-    }
+
     .hover{
         padding: 5px 14px 14px 0px!important;
         text-decoration: none !important;
@@ -143,7 +134,7 @@
         font-stretch: normal;
         display: inline-block !important;
         color: #9ba0a5 !important;
-        margin-right: 20px;
+
     }
     .hover2{
         padding: 5px 14px 14px 0px!important;
