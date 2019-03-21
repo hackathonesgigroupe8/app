@@ -123,6 +123,7 @@
             data-id="FR" data-name="France" id="FR" />
         </g>
     </svg>
+    <CloseDetail v-show="isSelectedCountry" v-on:close-detail="closeDetail"/>
     <Detail v-show="isSelectedCountry" v-bind:country="currentCountries"/>
     <div id="selectedCountryName"></div>
     </div>
@@ -131,11 +132,13 @@
 <script>
 import axios from 'axios';
 import Detail from '../Detail.vue'
+import CloseDetail from '../details/CloseDetail.vue'
 
 export default {
     name: 'InteractiveMap',
     components: {
         Detail,
+        CloseDetail
     },
     data: function(){
         return{
@@ -152,29 +155,29 @@ export default {
                 countryElements.forEach(function(cElement) {
                     if(country.code == cElement.dataset.id){
                         cElement.style.fill = '#e8cbb5';
+                        cElement.style.cursor = "pointer";
                         cElement.onclick =function() {
                                 vm.clearMapEffect()
                                 vm.addMapEffect(this)
                                 vm.currentCountries = {code:this.getAttribute('data-id'),name:this.getAttribute('data-name')};
-                                vm.updateIsSelectedCountry()
-                                }   
+                                vm.isSelectedCountry = true;
+                                }       
                 }})});
         },
-        updateIsSelectedCountry(){
-            this.isSelectedCountry = true;
-        },
         clearMapEffect(){
+            document.getElementById("description").style.opacity = 1;
             document.getElementById("svgmap").classList.remove('selectedMap')
              var countryElements = document.getElementById('countries').childNodes;
              countryElements.forEach(function(cElement){
                  cElement.classList.remove("selectedCountry");
              });
-             document.getElementById("description").style.display = 'block';
+             this.isSelectedCountry = false;
         },
         addMapEffect(countryPath){
             document.getElementById("svgmap").classList.add("selectedMap")
             countryPath.classList.add("selectedCountry")
-            document.getElementById("description").style.display = 'none';
+            document.getElementById("description").style.opacity = '0';
+            document.getElementById("mySidenav").classList.add('hideSidebar');
         },
         addMouseOverCountry(){
             let vm = this;
@@ -200,6 +203,11 @@ export default {
         },
         hideDescriptionCountry(){
             document.getElementById("selectedCountryName").style.display = "none";
+        },
+        closeDetail(response){
+            if(response){
+                this.clearMapEffect()
+            }
         }
     },
     created(){

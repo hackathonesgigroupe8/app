@@ -1,41 +1,25 @@
 <template>
-    <div>
-      Platform
+    <div class="page_two_columns">
+        <div class="descriptionMargin">  
+            <h1>Business platform</h1>
+            <h3>Register to our business services platform</h3>
+            <p>EAR is a platform that mesure hot topics and trend subjects.<br>Our know-how provides</p>
+            <p>Our company prvide also</p>
+            <a href="#" class="styledBtn">Request an access</a>
+        </div>
+        <div class="infoPageImg platformImg"></div>
     </div>
+    
 </template>
 
 <script>
-
     export default {
         name: 'Platform',
-        components: {
-
-        },
-        data: function () {
-            return {
-                isSelectedCountry: false
-            }
-        }
     }
 </script>
 
 <style scoped>
-    #description {
-        margin-top: 10vw;
-        margin-left: 64px;
-    }
-
-    #instruction {
-        z-index: 1;
-        position: absolute;
-        width: 100%;
-        padding: 2px;
-        bottom: 0;
-    }
-
-    @media (min-width: 742px) {
-        #instruction {
-            width: 55%;
-        }
+    .platformImg{
+        background-image: url('../../public/platform.jpg')
     }
 </style>

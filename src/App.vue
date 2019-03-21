@@ -212,4 +212,31 @@
         padding: 4px 8px;
     }
 
+    .infoPageImg {
+        width: 800px;
+        height: 800px;
+        background-size: cover;
+    }
+    .page_two_columns{
+        display: flex;
+        justify-content: space-between
+    }
+    .styledBtn{
+        border-radius: 4px;
+        border: solid 1px #c8cccf;
+        background-color: #ffffff;
+        margin-left: 7px;
+        padding: 0 30px;
+        color: #4a5056;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 33px;
+        letter-spacing: .1rem;
+        text-decoration: none;
+    }
+    .descriptionMargin{
+        margin-top:25vh;
+        margin-left: 15vh;
+    }
+
 </style>

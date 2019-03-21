@@ -28,6 +28,8 @@ export default {
     width:70vw;
     text-align: left;
     margin-left: 5px;
+    opacity: 1;
+    transition: opacity 0.5s;
   }
   .hero{
       line-height: 2.2;

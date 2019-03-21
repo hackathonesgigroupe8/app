@@ -1,39 +1,25 @@
 <template>
-    <div>
-        Services
+    <div class="page_two_columns">
+        <div class="descriptionMargin">
+            <h1>Our services</h1>
+            <h3>A partner for your strategic intelligence</h3>
+            <p>EAR is a platform that mesure hot topics and trend subjects.<br>Our know-how provides</p>
+            <p>Our company prvide also</p>
+            <a href="#" class="styledBtn">Contact us</a>
+        </div>
+        <div class="infoPageImg serviceImg"></div>
     </div>
+    
 </template>
 
 <script>
     export default {
         name: 'Services',
-        components: {
-        },
-        data: function () {
-            return {
-                isSelectedCountry: false
-            }
-        }
     }
 </script>
 
 <style scoped>
-    #description {
-        margin-top: 10vw;
-        margin-left: 64px;
-    }
-
-    #instruction {
-        z-index: 1;
-        position: absolute;
-        width: 100%;
-        padding: 2px;
-        bottom: 0;
-    }
-
-    @media (min-width: 742px) {
-        #instruction {
-            width: 55%;
-        }
+    .serviceImg {
+        background-image: url("../../public/service.jpg");
     }
 </style>

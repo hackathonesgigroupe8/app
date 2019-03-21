@@ -13,8 +13,6 @@
             Regarding global pollution in 2016 and according to data collected in the media, the public opinion is bad
             aware of the problem.
         </p>
-
-
         <h3 style="margin-bottom: 26px;">Rating </h3>
 
         <div class="row">

@@ -35,14 +35,6 @@
                 this.list = false
             }
         },
-        mounted()
-        {
-            document.getElementById("closeNavbar").addEventListener('click',() =>
-            {
-                document.getElementById("mySidenav").classList.remove('hideSidebar');
-
-            })
-        }
     }
 </script>
 
