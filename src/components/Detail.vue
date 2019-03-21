@@ -2,7 +2,7 @@
     <div>
         <div id="mySidenav" class="sidenav hideSidebar">
             <DetailCountry v-bind:show-articles="showArticles" v-if="!list" v-bind:country="country"/>
-            <ListArticleCountry v-bind:show-details="showDetails" v-if="list" />
+            <ListArticleCountry v-bind:show-details="showDetails" v-if="list" v-bind:country="country" />
         </div>
     </div>
 </template>
@@ -37,7 +37,7 @@
         },
         mounted()
         {
-            document.getElementById("closeNav").addEventListener('click',() =>
+            document.getElementById("closeNavbar").addEventListener('click',() =>
             {
                 document.getElementById("mySidenav").classList.remove('hideSidebar');
 
