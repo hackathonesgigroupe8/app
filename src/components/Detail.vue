@@ -1,8 +1,8 @@
 <template>
     <div>
         <div id="mySidenav" class="sidenav">
-            <DetailCountry v-if="detail" />
-            <ListArticleCountry v-if="list" />
+            <DetailCountry v-bind:show-articles="showArticles" v-if="!list" />
+            <ListArticleCountry v-bind:show-details="showDetails" v-if="list" />
         </div>
         <span style="font-size:30px;cursor:pointer;margin:7px;" id="openNav">&#9776;</span>
     </div>
@@ -21,11 +21,17 @@
         data () {
             return {
                 message:  "test",
-                detail : true,
                 list: false
             }
         },
-
+        methods: {
+            showArticles(){
+                this.list = true
+            },
+            showDetails(){
+                this.list = false
+            }
+        },
         mounted()
         {
             document.getElementById("openNav").addEventListener('click',() =>
@@ -35,6 +41,7 @@
             document.getElementById("closeNav").addEventListener('click',() =>
             {
                 document.getElementById("mySidenav").classList.remove('hideSidebar');
+
             })
         }
     }
