@@ -1,22 +1,7 @@
 <template>
     <div class="instruction">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="infoIcon" width="19px" height="19px" viewBox="0 0 19 19"
-             version="1.1"
-             xmlns="http://www.w3.org/2000/svg">
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Artboard" transform="translate(-731.000000, -838.000000)" fill="#AA8F72" fill-rule="nonzero">
-                    <g id="information" transform="translate(731.000000, 838.000000)">
-                        <path d="M9.5,0 C4.2617,0 0,4.26175758 0,9.50005758 C0,14.7383576 4.2617,19 9.5,19 C14.7383,19 19,14.7383576 19,9.50005758 C19,4.26175758 14.7383,0 9.5,0 Z M9.5,17.2727273 C5.21406061,17.2727273 1.72727273,13.7859394 1.72727273,9.50005758 C1.72727273,5.21417576 5.21406061,1.72727273 9.5,1.72727273 C13.7859394,1.72727273 17.2727273,5.21417576 17.2727273,9.50005758 C17.2727273,13.7859394 13.7858818,17.2727273 9.5,17.2727273 Z"
-                              id="Shape"></path>
-                        <path d="M9.5,3.8 C8.97616023,3.8 8.55,4.22636 8.55,4.7504275 C8.55,5.27402 8.97616023,5.7 9.5,5.7 C10.0238398,5.7 10.45,5.27402 10.45,4.7504275 C10.45,4.22636 10.0238398,3.8 9.5,3.8 Z"
-                              id="Shape"></path>
-                        <path d="M9.5,7.6 C8.97534667,7.6 8.55,7.97217833 8.55,8.43125 L8.55,13.41875 C8.55,13.8778217 8.97534667,14.25 9.5,14.25 C10.0246533,14.25 10.45,13.8778217 10.45,13.41875 L10.45,8.43125 C10.45,7.97217833 10.0246533,7.6 9.5,7.6 Z"
-                              id="Shape"></path>
-                    </g>
-                </g>
-            </g>
-        </svg>
-        Choose a country and discover more data about the ecological situation for the selected data set
+        <img src="../../../public/information.svg" alt="Close map" class="floatIcon">
+        Choose a colored country and discover more data about the ecological situation for the selected data set
     </div>
 </template>
 
@@ -38,7 +23,7 @@
         padding: 6px;
         border-radius: 4px;
         transition-duration: .2s;
-        width: 750px;
+        width: 780px;
         position: fixed;
         bottom: 0;
         right:-800px;
@@ -65,7 +50,7 @@
         }
     }
 
-    .infoIcon {
+    .floatIcon {
         margin-left: 8px;
         margin-top: 2px;
         margin-right: 8px;
