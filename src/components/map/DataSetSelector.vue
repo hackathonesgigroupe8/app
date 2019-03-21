@@ -1,6 +1,6 @@
 <template>
     <div id="dataSetSelect">
-      <p class="descDataset">Set of data</p>
+      <p class="descDataset">Topic</p>
         <select id="pet-select">
             <option value="global-pollution">Global pollution in 2018</option>
         </select>
@@ -17,7 +17,11 @@ export default {
   #select{
       z-index: 1;
   }
+  #dataSetSelect{
+      margin-top: 48px
+  }
   .descDataset{
         color: #ba9068;
+      margin-bottom: 8px;
   }
 </style>

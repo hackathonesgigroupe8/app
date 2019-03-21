@@ -107,10 +107,10 @@
                         vm.specilizedMedia = res.data.specializedRepresentation.toFixed(2);
                         vm.generalistMedia = res.data.generalistRepresentation.toFixed(2);
                         vm.topicMedia = res.data.topicsInMedia;
-                        console.log(res);
+
                     })
                     .catch((err) => {
-                        console.log(err);
+                        return err;
                     })
             }
         },

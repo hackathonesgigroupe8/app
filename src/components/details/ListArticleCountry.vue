@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="#" v-on:click="showDetails" class="closebtn" id="closeNav"><</a>
+        <a href="#" v-on:click="showDetails" class="closebtn" id="closeNav"></a>
         <h1 style="margin-bottom: 32px;">All articles for France </h1>
 
 
@@ -47,45 +47,6 @@
         margin: 0;
         padding: 0;
         font-family: "Avenir Next", sans-serif;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #4d4d4d;
-        padding: 0 46px 0 6px;
-        float: right;
-        margin-top: 21px;
-        height: 50px;
-        display: inline-block;
-    }
-    .select {
-        text-decoration: none;
-        color: #4d4d4d;
-        padding: 0 46px 0 6px;
-        float: right;
-        margin-top: 7px;
-        margin-right: 14px;
-        height: 50px;
-        display: inline-block;
-        background-color: white;
-        border: none;
-    }
-    nav {
-        width: 1440px;
-        height: 80px;
-        box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.11);
-        background-color: #ffffff;
-        position: sticky;
-        top: 0;
-        padding: 12px 24px;
-        z-index: 10;
-        box-sizing: border-box;
-    }
-
-    img{
-        display: inline-block;
-        height: 30px;
-        margin-top: 15px;
     }
 
     @media screen and (max-height: 450px) {

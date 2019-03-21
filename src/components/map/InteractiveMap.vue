@@ -185,6 +185,9 @@ export default {
                     var flagImg = document.createElement("img");
                     var textCountry = document.createElement("p");
                     flagImg.src = "https://www.countryflags.io/"+this.dataset.id+"/flat/64.png";
+                    flagImg.style.height = "22px";
+                    flagImg.style.float = "left";
+                    flagImg.style.marginRight = "8px";
                     textCountry.appendChild(flagImg)
                     textCountry.appendChild(document.createTextNode(this.dataset.name));
                     descriptionCountryElement.style.display = "block";
@@ -264,19 +267,18 @@ export default {
     }
     
     #selectedCountryName{
-        border: 1px solid #d8dbdf;
         z-index: 1;
-        position: absolute;
-        padding: 2px;
-        bottom: 0;
+        position: fixed;
+        padding: 8px;
+        bottom: 42px;
         background-color: #ffffff;
         text-align: right;
         margin-bottom: 25px;
         margin-left: 5px;
+        height: 38px;
         border: 1px solid #d8dbdf;
         box-sizing: border-box;
-        left: 0;
+        right: 42px;
         border-radius: 10px;
-        text-align: center;
     }
 </style>

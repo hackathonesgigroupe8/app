@@ -1,22 +1,13 @@
 <template>
     <div>
-        <Instruction/>
-        <Description/>
-        <InteractiveMap/>
+        Services
     </div>
 </template>
 
 <script>
-    import InteractiveMap from './map/InteractiveMap.vue'
-    import Description from './map/Description.vue'
-    import Instruction from './map/Instruction.vue'
-
     export default {
-        name: 'Map',
+        name: 'Services',
         components: {
-            InteractiveMap,
-            Description,
-            Instruction
         },
         data: function () {
             return {

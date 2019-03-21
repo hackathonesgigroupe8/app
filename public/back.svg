@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="13px" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>back</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-2" transform="translate(-48.000000, -117.000000)" fill="#AA8F72" fill-rule="nonzero">
+            <g id="back" transform="translate(48.000000, 117.000000)">
+                <path d="M0.185814853,6.96397339 L5.90303423,12.8080948 C6.153902,13.0639684 6.5603479,13.0639684 6.81184918,12.8080948 C7.06271694,12.5522211 7.06271694,12.1366154 6.81184918,11.8807418 L1.5481134,6.50032389 L6.81121567,1.11990599 C7.06208344,0.864032356 7.06208344,0.448426639 6.81121567,0.191905225 C6.5603479,-0.0639684082 6.1532685,-0.0639684082 5.90240073,0.191905225 L0.185181349,6.03597263 C-0.0618325989,6.28920115 -0.0618325989,6.71133867 0.185814853,6.96397339 Z" id="Chevron_Right"></path>
+            </g>
+        </g>
+    </g>
+</svg>

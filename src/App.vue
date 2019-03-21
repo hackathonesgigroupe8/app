@@ -1,23 +1,20 @@
 <template>
     <div>
         <Header/>
-        <Map/>
+        <router-view />
     </div>
 </template>
 
 <script>
     import Header from "./components/Header.vue";
-    import Map from './components/Map.vue'
 
     export default {
-        name: 'app',
+        name: 'App',
         components: {
             Header,
-            Map
         },
-        data () {
-            return {
-            }
+        data() {
+            return {}
         }
     }
 </script>
@@ -33,7 +30,13 @@
         width: 100%
 
     }
-    body{
+
+    h1 {
+        font-weight: 500;
+        font-size: 32px;
+    }
+
+    body {
         overflow: hidden;
     }
 
@@ -51,9 +54,10 @@
         box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.25);
         background-color: #ffffff;
         transform: translateX(100%);
-        top:0;
+        top: 0;
     }
-    .hideSidebar{
+
+    .hideSidebar {
         transform: translateX(0);
     }
 
@@ -78,5 +82,8 @@
         margin-top: 10px;
     }
 
+    select {
+        padding: 4px 8px;
+    }
 
 </style>
