@@ -1,7 +1,7 @@
 <template>
     <div>
         <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
-        <h1 style="margin-bottom: 32px;">{{ countryName }}</h1>
+        <h1 style="margin-bottom: 32px;">{{ country.name }}</h1>
         <p style="margin-bottom: 32px;">
             Regarding global pollution in 2016 and according to data collected in the media, the public opinion is {{ awareTitle }} of the problem.</p>
         <h3 style="margin-bottom: 26px;">Rating </h3>
@@ -73,7 +73,10 @@
     import axios from 'axios';
     export default {
         name: 'DetailCountry',
-        props: ['showArticles'],
+        props: {
+            country: Object,
+            showArticles: Array
+        },
         data() {
             return {
                 countryName: "",

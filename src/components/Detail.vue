@@ -1,8 +1,8 @@
 <template>
     <div>
         <div id="mySidenav" class="sidenav hideSidebar">
-            <DetailCountry v-if="detail" v-bind:country="country"/>
-            <ListArticleCountry v-if="list" />
+            <DetailCountry v-bind:show-articles="showArticles" v-if="!list" v-bind:country="country"/>
+            <ListArticleCountry v-bind:show-details="showDetails" v-if="list" />
         </div>
     </div>
 </template>
@@ -23,7 +23,8 @@
         data () {
             return {
                 message:  "test",
-                list: false
+                list: false,
+
             }
         },
         methods: {
