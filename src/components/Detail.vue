@@ -23,16 +23,23 @@
         data () {
             return {
                 message:  "test",
-                detail : true,
                 list: false
             }
         },
-
+        methods: {
+            showArticles(){
+                this.list = true
+            },
+            showDetails(){
+                this.list = false
+            }
+        },
         mounted()
         {
             document.getElementById("closeNav").addEventListener('click',() =>
             {
                 document.getElementById("mySidenav").classList.remove('hideSidebar');
+
             })
         }
     }
