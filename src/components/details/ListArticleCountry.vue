@@ -58,7 +58,7 @@
         height: 50px;
         display: inline-block;
     }
-    select {
+    .select {
         text-decoration: none;
         color: #4d4d4d;
         padding: 0 46px 0 6px;
@@ -86,46 +86,6 @@
         display: inline-block;
         height: 30px;
         margin-top: 15px;
-    }
-
-    .sidenav {
-        height: 100%;
-        right: 0;
-        width: 50%;
-        position: absolute;
-        z-index: 1;
-        overflow-x: hidden;
-        transition: 0.5s;
-        box-sizing: border-box;
-        padding: 72px 48px 0;
-        box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.25);
-        background-color: #ffffff;
-        transform: translateX(100%);
-        top:0;
-    }
-    .hideSidebar{
-        transform: translateX(0);
-    }
-
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-
-    .sidenav a:hover {
-        color: #f1f1f1;
-    }
-
-    .sidenav .closebtn {
-        position: relative;
-        right: 25px;
-        font-size: 36px;
-        color: black;
-        margin-top: 10px;
     }
 
     @media screen and (max-height: 450px) {

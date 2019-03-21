@@ -2,7 +2,7 @@
     <div>
         <nav>
             <img src="../assets/logo.svg" alt="logo">
-            <select>
+            <select class="select">
                 <option value="en">EN</option>
                 <option value="fr">FR</option>
             </select>

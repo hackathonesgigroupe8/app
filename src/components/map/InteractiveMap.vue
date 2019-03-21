@@ -63,8 +63,6 @@
             data-id="HU" data-name="Hungary" id="HU" />
             <path d="M476.902466,277.623073L473.129039,281.342993L474.577469,286.069862L472.328719,290.810388L476.254499,291.487466L481.171220,288.827951L483.267616,284.739858L482.810270,281.407902L478.998719,280.500885L479.570437,277.952133L478.998719,275.370121L476.902466,277.623073Z "
             data-id="IE" data-name="Ireland" id="IE" />
-            <path d="M459.760376,210.211024L455.158824,209.718053L450.635814,213.389749L447.146168,211.451428L442.932021,215.165014L438.609162,210.526121L434.405693,211.548477L432.531735,215.979107L438.352613,217.534422L438.471930,219.478276L433.561086,220.749801L439.597738,223.917277L436.867277,226.731643L448.257214,229.637833L458.647825,224.161259L462.253635,219.203507L459.119862,214.647098L459.760376,210.211024Z "
-            data-id="IS" data-name="Iceland" id="IS" />
             <path d="M598.605088,361.500439L598.349685,362.081106L597.421520,362.074948L597.344986,362.109245L596.948266,362.946020L596.385720,365.425679L595.034607,368.206573L595.034611,368.206585L596.581684,372.900349L596.857255,373.729162L598.239326,368.593218L598.174543,367.330568L596.870584,367.771444L597.001582,366.100291L597.582043,363.917633L598.585309,364.372964L599.068597,363.335834L599.015567,363.313349L599.391648,362.811501L599.349225,361.456812L598.605088,361.500439Z "
             data-id="IL" data-name="Israel" id="IL" />
             <path d="M617.455884,348.027560L616.034399,350.192325L614.516314,351.044471L614.777737,353.548605L613.729897,357.643190L607.589909,361.120690L608.707977,365.137243L612.048710,366.023834L616.181162,368.301751L624.001048,374.755023L629.157549,375.008626L631.193032,371.946887L633.056527,372.213548L634.702457,372.370526L632.254345,368.966171L632.708967,366.613894L631.281893,364.125978L627.883544,362.318536L625.962433,359.157366L626.605240,356.535659L628.001213,355.368275L627.791960,353.381128L625.973326,352.354346L624.176333,348.234486L624.176272,348.234513L622.847149,348.821808L621.873121,347.935741L618.647190,347.485721L617.455884,348.027560Z "
@@ -125,15 +123,19 @@
             data-id="FR" data-name="France" id="FR" />
         </g>
     </svg>
+    <Detail v-show="isSelectedCountry" v-bind:country="currentCountries"/>
+    <div id="selectedCountryName"></div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Detail from '../Detail.vue'
 
 export default {
     name: 'InteractiveMap',
     components: {
+        Detail,
     },
     data: function(){
         return{
@@ -150,22 +152,51 @@ export default {
                 countryElements.forEach(function(cElement) {
                     if(country.code == cElement.dataset.id){
                         cElement.style.fill = '#e8cbb5';
-                        } 
-            })});
-        },
-        showCountryOnClick: function(){
-            let vm = this;
-            var countryElements = document.getElementById('countries').childNodes;
-            countryElements.forEach(function(cElement){
-                cElement.onclick = function() {
-                    vm.currentCountries = {code:this.getAttribute('data-id'),name:this.getAttribute('data-name')};
-                    vm.updateIsSelectedCountry()
-                    console.log(vm.currentCountries)
-                    }
-            });
+                        cElement.onclick =function() {
+                                vm.clearMapEffect()
+                                vm.addMapEffect(this)
+                                vm.currentCountries = {code:this.getAttribute('data-id'),name:this.getAttribute('data-name')};
+                                vm.updateIsSelectedCountry()
+                                }   
+                }})});
         },
         updateIsSelectedCountry(){
-            this.isSelectedCountry = true
+            this.isSelectedCountry = true;
+        },
+        clearMapEffect(){
+            document.getElementById("svgmap").classList.remove('selectedMap')
+             var countryElements = document.getElementById('countries').childNodes;
+             countryElements.forEach(function(cElement){
+                 cElement.classList.remove("selectedCountry");
+             });
+             document.getElementById("description").style.display = 'block';
+        },
+        addMapEffect(countryPath){
+            document.getElementById("svgmap").classList.add("selectedMap")
+            countryPath.classList.add("selectedCountry")
+            document.getElementById("description").style.display = 'none';
+        },
+        addMouseOverCountry(){
+            let vm = this;
+            document.getElementById('countries').childNodes.forEach(function(cElement) {
+                cElement.onmouseover = function(){
+                    var descriptionCountryElement = document.getElementById("selectedCountryName")
+                    while (descriptionCountryElement.firstChild) descriptionCountryElement.removeChild(descriptionCountryElement.firstChild);
+                    var flagImg = document.createElement("img");
+                    var textCountry = document.createElement("p");
+                    flagImg.src = "https://www.countryflags.io/"+this.dataset.id+"/flat/64.png";
+                    textCountry.appendChild(flagImg)
+                    textCountry.appendChild(document.createTextNode(this.dataset.name));
+                    descriptionCountryElement.style.display = "block";
+                    descriptionCountryElement.appendChild(textCountry);
+                }
+                cElement.onmouseout = function(){
+                    vm.hideDescriptionCountry()
+                }
+            })
+        },
+        hideDescriptionCountry(){
+            document.getElementById("selectedCountryName").style.display = "none";
         }
     },
     created(){
@@ -177,7 +208,7 @@ export default {
         )
     },
     mounted (){
-        this.showCountryOnClick();
+       this.addMouseOverCountry();
     }
 }
 </script>
@@ -187,7 +218,13 @@ export default {
         position: absolute;
         top: -65vw;
         right: -119%;
-        width: 310%;
+        width: 350%;
+    }
+
+    @media (min-width: 742px) {
+     #svgmap {
+        width:300%;
+        }
     }
 
     path {
@@ -203,5 +240,43 @@ export default {
         overflow: hidden;   
         width: 100%;
         height: 100vh;
+    }
+
+    .selectedCountry{
+        fill: rgb(179, 125, 87) !important;
+        transform: translateX(-2px) translateY(-2px);
+        transition-duration: 0.6s;
+        transition-delay: .6s;
+        transition-timing-function: ease-in;
+    }
+  
+    .selectedMap{
+        position: absolute;
+        top: -65vw;
+        transition-duration: 0.8s;
+        transition-timing-function: ease-in;
+        right: -85% !important; 
+        width: 310%;
+    }
+
+    .hideDescription,#selectedCountryName{
+        display:none
+    }
+    
+    #selectedCountryName{
+        border: 1px solid #d8dbdf;
+        z-index: 1;
+        position: absolute;
+        padding: 2px;
+        bottom: 0;
+        background-color: #ffffff;
+        text-align: right;
+        margin-bottom: 25px;
+        margin-left: 5px;
+        border: 1px solid #d8dbdf;
+        box-sizing: border-box;
+        left: 0;
+        border-radius: 10px;
+        text-align: center;
     }
 </style>
