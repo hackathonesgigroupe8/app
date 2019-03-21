@@ -14,7 +14,7 @@
             </div>
             <div class="six columns">
                 <label class="small">Articles in the last mounth</label>
-                <p class="numberK">2.3K <a href="#" class="hover2" style="margin-top: -43px;text-align: center;">Seen in a list</a></p>
+                <p class="numberK">2.3K <a href="#" v-on:click="showArticles" class="hover2" style="margin-top: -43px;text-align: center;">Seen in a list</a></p>
             </div>
         </div>
 
@@ -61,7 +61,7 @@
 
 <script>
 export default {
-name: 'DetailCountry',
+name: 'DetailCountry',props: ['showArticles'],
 }
 </script>
 

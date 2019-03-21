@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="javascript:void(0)" class="closebtn" id="closeNav">&times;</a>
+        <a href="#" v-on:click="showDetails" class="closebtn" id="closeNav"><</a>
         <h1 style="margin-bottom: 32px;">All articles for France </h1>
 
 
@@ -32,7 +32,7 @@
 
 <script>
     export default {
-        name: 'ListArticleCountry',
+        name: 'ListArticleCountry',props: ['showDetails'],
     }
 </script>
 
