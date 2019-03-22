@@ -1,7 +1,7 @@
 <template>
     <div id="description">
       <h1>Be aware on ecology opinion trends </h1>
-      <p class="hero">Ecoaware trends gives an overview, on a specific set of data, of the current state of the awareness in public opinion and in the media.</p>
+      <p class="hero">Ecoaware  gives an overview of trends regarding scientific data, and the current state of the awareness in public opinion and in the media about ecology.</p>
     <DataSetSelector/>
         <p class="light">Source</p>
         <img class="logos" src="logos.jpg">

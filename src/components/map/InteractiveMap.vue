@@ -263,11 +263,11 @@ export default {
   
     .selectedMap{
         position: absolute;
-        top: -65vw;
-        transition-duration: 0.8s;
+        top: -80vw!important;
+        transition-duration: 0.5s;
         transition-timing-function: ease-in;
-        right: -85% !important; 
-        width: 310%;
+        right: -98% !important;
+        width: 350%!important;
     }
 
     .hideDescription,#selectedCountryName{
